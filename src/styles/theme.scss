@@ -1,0 +1,24 @@
+@import 'tokens.scss'; // style-dictionary이 생성한 파일
+
+:root {
+  --primary: #{$tokens-light-primary};
+  --secondary: #{$tokens-light-secondary};
+  --background: #{$tokens-light-background};
+  --error: #{$tokens-light-error};
+  --content-primary: #{$tokens-light-content-primary};
+  --content-secondary: #{$tokens-light-content-secondary};
+  --gray-1: #{$tokens-light-gray-1};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  [data-theme='dark'] {
+    --primary: #{$tokens-dark-primary};
+    --secondary: #{$tokens-dark-secondary};
+    --background: #{$tokens-dark-background};
+    --error: #{$tokens-dark-error};
+    --content-primary: #{$tokens-dark-content-primary};
+    --content-secondary: #{$tokens-dark-content-secondary};
+    --gray-1: #{$tokens-dark-gray-1};
+  }
+}
