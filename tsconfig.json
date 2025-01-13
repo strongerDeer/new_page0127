@@ -1,15 +1,16 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "es2018",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, // 라이브러리 타입 정의 파일(.d.ts) 전체 검사 건너뜀(컴파일 속도 향상)
     "strict": true,
+    "forceConsistentCasingInFileNames": true, //파일 이름의 대소문자 일관성 강제
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // CommonJS와 ES 모듈 import 방식을 모두 지원
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
