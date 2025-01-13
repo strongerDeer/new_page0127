@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "@styles/*": ["src/styles/*"]
+    },
+    "resolveJsonModule": true, // JSON 모듈 import 허용
+    "esModuleInterop": true // import 문법 호환성 개선
+  }
+}
