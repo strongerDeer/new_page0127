@@ -5,6 +5,7 @@ import styles from './Button.module.scss';
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'small' | 'medium' | 'large';
+  type?: 'button' | 'submit';
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -12,11 +13,13 @@ export interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'medium',
+  type = 'button',
   children,
   onClick,
 }) => {
   return (
     <button
+      type={type}
       className={`${styles.button} ${styles[variant]} ${styles[size]}`}
       onClick={onClick}
     >
