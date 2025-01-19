@@ -2086,7 +2086,7 @@
     react-dom "^16.8.0 || ^17.0.0 || ^18.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^8.4.7":
+"@storybook/addon-essentials@^8.5.0":
   version "8.5.0"
   resolved "https://registry.npmjs.org/@storybook/addon-essentials/-/addon-essentials-8.5.0.tgz"
   integrity sha512-RrHRdaw2j3ugZiYQ6OHt3Ff08ID4hwAvipqULEsbEnEw3VlXOaW/MT5e2M7kW3MHskQ3iJ6XAD1Y1rNm432Pzw==
@@ -2109,7 +2109,7 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-interactions@^8.4.7":
+"@storybook/addon-interactions@^8.5.0":
   version "8.5.0"
   resolved "https://registry.npmjs.org/@storybook/addon-interactions/-/addon-interactions-8.5.0.tgz"
   integrity sha512-vX1a8qS7o/W3kEzfL/CqOj/Rr6UlGLT/n0KXMpfIhx63tzxe1a1qGpFLL0h0zqAVPHZIOu9humWMKri5Iny6oA==
@@ -2119,6 +2119,15 @@
     "@storybook/test" "8.5.0"
     polished "^4.2.2"
     ts-dedent "^2.2.0"
+
+"@storybook/addon-links@^8.5.0":
+  version "8.5.0"
+  resolved "https://registry.npmjs.org/@storybook/addon-links/-/addon-links-8.5.0.tgz"
+  integrity sha512-Y11GIByAYqn0TibI/xsy0vCe+ZxJS9PVAAoHngLxkf9J4WodAXcJABr8ZPlWDNdaEhSS/FF7UQUmNag0UC2/pw==
+  dependencies:
+    "@storybook/csf" "0.1.12"
+    "@storybook/global" "^5.0.0"
+    ts-dedent "^2.0.0"
 
 "@storybook/addon-measure@8.5.0":
   version "8.5.0"
@@ -2258,7 +2267,7 @@
   resolved "https://registry.npmjs.org/@storybook/manager-api/-/manager-api-8.5.0.tgz"
   integrity sha512-Ildriueo3eif4M+gMlMxu/mrBIbAnz8+oesmQJKdzZfe/U9eQTI9OUqJsxx/IVBmdzQ3ySsgNmzj5VweRkse4A==
 
-"@storybook/nextjs@^8.4.7":
+"@storybook/nextjs@^8.5.0":
   version "8.5.0"
   resolved "https://registry.npmjs.org/@storybook/nextjs/-/nextjs-8.5.0.tgz"
   integrity sha512-zUU0wQd4F2p006gZX0XC3+Zsj0tB4DOz+7FjSlnyGbzf5cDE6cD74l0Azj6aZluR4Q2say7gWDIpHu05YvIJsg==
@@ -2343,7 +2352,7 @@
   resolved "https://registry.npmjs.org/@storybook/react-dom-shim/-/react-dom-shim-8.5.0.tgz"
   integrity sha512-7P8xg4FiuFpM6kQOzZynno+0zyLVs8NgsmRK58t3JRZXbda1tzlxTXzvqx4hUevvbPJGjmrB0F3xTFH+8Otnvw==
 
-"@storybook/react@^8.4.7", "@storybook/react@8.5.0":
+"@storybook/react@^8.5.0", "@storybook/react@8.5.0":
   version "8.5.0"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-8.5.0.tgz"
   integrity sha512-/jbkmGGc95N7KduIennL/k8grNTP5ye/YBnkcS4TbF7uDWBtKy3/Wqvx5BIlFXq3qeUnZJ8YtZc0lPIYeCY8XQ==
@@ -2735,7 +2744,7 @@
   dependencies:
     "@babel/core" "^7.23.9"
 
-"@vanilla-extract/css@^1.17.0":
+"@vanilla-extract/css@^1.0.0", "@vanilla-extract/css@^1.17.0":
   version "1.17.0"
   resolved "https://registry.npmjs.org/@vanilla-extract/css/-/css-1.17.0.tgz"
   integrity sha512-W6FqVFDD+C71ZlKsuj0MxOXSvHb1tvQ9h/+79aYfi097wLsALrnnBzd0by8C///iurrpQ3S+SH74lXd7Lr9MvA==
@@ -2752,6 +2761,13 @@
     media-query-parser "^2.0.2"
     modern-ahocorasick "^1.0.0"
     picocolors "^1.0.0"
+
+"@vanilla-extract/dynamic@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/@vanilla-extract/dynamic/-/dynamic-2.1.2.tgz"
+  integrity sha512-9BGMciD8rO1hdSPIAh1ntsG4LPD3IYKhywR7VOmmz9OO4Lx1hlwkSg3E6X07ujFx7YuBfx0GDQnApG9ESHvB2A==
+  dependencies:
+    "@vanilla-extract/private" "^1.0.6"
 
 "@vanilla-extract/integration@^7.1.12":
   version "7.1.12"
@@ -2782,6 +2798,11 @@
   version "1.0.6"
   resolved "https://registry.npmjs.org/@vanilla-extract/private/-/private-1.0.6.tgz"
   integrity sha512-ytsG/JLweEjw7DBuZ/0JCN4WAQgM9erfSTdS1NQY778hFQSZ6cfCDEZZ0sgVm4k54uNz6ImKB33AYvSR//fjxw==
+
+"@vanilla-extract/recipes@^0.5.5":
+  version "0.5.5"
+  resolved "https://registry.npmjs.org/@vanilla-extract/recipes/-/recipes-0.5.5.tgz"
+  integrity sha512-VadU7+IFUwLNLMgks29AHav/K5h7DOEfTU91RItn5vwdPfzduodNg317YbgWCcpm7FSXkuR3B3X8ZOi95UOozA==
 
 "@vanilla-extract/webpack-plugin@^2.3.16":
   version "2.3.16"
