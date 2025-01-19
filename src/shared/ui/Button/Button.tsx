@@ -1,29 +1,58 @@
-// src/shared/ui/Button/Button.tsx
+// Button.tsx
 import React from 'react';
-import styles from './Button.module.scss';
+import { buttonStyle, buttonVars } from './Button.css';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+import Icon, { IconType } from '../Icon/Icon';
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'small' | 'medium' | 'large';
+  leftIcon?: IconType;
+  variant?: 'solid' | 'outline';
+  color?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
   type?: 'button' | 'submit';
-  children: React.ReactNode;
+  label: string;
+  disabled?: boolean;
   onClick?: () => void;
+  full?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'medium',
+const Button = ({
+  leftIcon,
+  variant = 'solid',
+  color = 'primary',
+  size = 'md',
   type = 'button',
-  children,
+  label,
+  full = false,
+  disabled = false,
   onClick,
-}) => {
+}: ButtonProps) => {
+  const colorValue =
+    color.startsWith('#') || color.startsWith('rgb')
+      ? color
+      : `var(--${color})`;
+
+  const vars = assignInlineVars({
+    [buttonVars.backgroundColor]: colorValue,
+    [buttonVars.color]: variant === 'solid' ? 'white' : colorValue,
+    [buttonVars.borderColor]: colorValue,
+  });
+
   return (
     <button
       type={type}
-      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
+      className={buttonStyle({
+        variant,
+        size,
+        full,
+        withIcon: !!leftIcon,
+      })}
+      style={vars}
       onClick={onClick}
+      disabled={disabled}
     >
-      {children}
+      {leftIcon && <Icon name={leftIcon} />}
+      <span>{label}</span>
     </button>
   );
 };

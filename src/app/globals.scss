@@ -1,7 +1,15 @@
-@import '@styles/theme.scss';
+@use '@styles/theme.scss';
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 
 body {
-  color: var(--primary);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--content-primary);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }

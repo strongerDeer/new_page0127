@@ -1,10 +1,12 @@
-import GoogleLoginButton from '@/features/auth/GoogleLoginButton/GoogleLoginButton';
+import { GoogleLoginButton } from '@features/auth/GoogleLoginButton';
+import Container from '@shared/ui/Container/Container';
 
 export default function page() {
   return (
-    <main>
-      <h2>로그인</h2>
+    <Container tag="main">
+      <h2>안녕하세요: )</h2>
+      <p>오늘도 당신의 페이지를 펼쳐보세요.</p>
       <GoogleLoginButton />
-    </main>
+    </Container>
   );
 }
