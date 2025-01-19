@@ -11,7 +11,7 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_measurement_Id,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
 // firebase 초기화
@@ -23,14 +23,16 @@ const app: FirebaseApp =
   getApps().length > 0 ? getApps()[0] : initializeApp(firebaseConfig);
 
 // analytics는 클라이언트 사이드에서만 초기화
-let analytics;
-let auth: Auth; // firebase auth 사용(구글 로그인)
-let db: Firestore;
+let analytics = null;
+let auth: Auth | null = null; // firebase auth 사용(구글 로그인)
+let db: Firestore | null = null;
+let googleProvider: GoogleAuthProvider | null = null;
+
 if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);
   auth = getAuth(app);
   db = getFirestore(app);
+  googleProvider = new GoogleAuthProvider();
 }
-const googleProvider = new GoogleAuthProvider();
 
 export { analytics, auth, db, googleProvider };
