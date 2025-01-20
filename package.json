@@ -9,7 +9,8 @@
     "lint": "next lint",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "jest"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.64.0",
@@ -37,6 +38,9 @@
     "@storybook/react": "^8.5.0",
     "@storybook/test": "^8.4.7",
     "@storybook/testing-library": "^0.2.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -46,6 +50,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "eslint-plugin-storybook": "^0.11.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8",
     "prettier": "^3.4.2",
     "storybook": "^8.4.7",
