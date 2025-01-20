@@ -24,15 +24,11 @@ const app: FirebaseApp =
 
 // analytics는 클라이언트 사이드에서만 초기화
 let analytics = null;
-let auth: Auth | null = null; // firebase auth 사용(구글 로그인)
-let db: Firestore | null = null;
-let googleProvider: GoogleAuthProvider | null = null;
 
 if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);
-  auth = getAuth(app);
-  db = getFirestore(app);
-  googleProvider = new GoogleAuthProvider();
 }
-
+const auth: Auth = getAuth(app); // firebase auth 사용(구글 로그인)
+const db: Firestore = getFirestore(app);
+const googleProvider: GoogleAuthProvider = new GoogleAuthProvider();
 export { analytics, auth, db, googleProvider };
