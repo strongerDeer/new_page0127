@@ -1,3 +1,7 @@
+export const NO_PROFILE = '/images/no-profile.png';
+export const STORAGE_DOWNLOAD_URL_STR =
+  'https://firebasestorage.googleapis.com';
+
 export const SITE = {
   title: 'page 0127.',
   description: '나만의 온라인 서재',
@@ -28,3 +32,7 @@ export const ROUTES = {
   ADMIN: '/admin',
   ADMIN_BANNER: '/admin/banner',
 } as const;
+
+export const COLLECTIONS = {
+  USERS: 'users',
+};

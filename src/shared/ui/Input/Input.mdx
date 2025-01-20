@@ -1,0 +1,28 @@
+# Input
+
+입력 필드를 표시하는 컴포넌트입니다.
+
+## 특징
+
+- 다양한 입력 타입 지원 (text, email, password, number)
+- 레이블 옵션
+- 읽기 전용 모드
+- 플레이스홀더 지원
+
+## 사용법
+
+```tsx
+import Input from './Input';
+
+function MyForm() {
+  return (
+    <Input
+      label="이메일"
+      type="email"
+      placeholder="이메일을 입력하세요"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+  );
+}
+```
