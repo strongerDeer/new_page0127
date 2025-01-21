@@ -1,5 +1,5 @@
 import { db } from '@/shared/api/firebase';
-import { COLLECTIONS } from '@shared/lib/constants';
+import { COLLECTIONS } from '@/lib/constants';
 import { collection, getDocs, limit, query, where } from 'firebase/firestore';
 
 export const checkUserExistsByUid = async (uid: string) => {

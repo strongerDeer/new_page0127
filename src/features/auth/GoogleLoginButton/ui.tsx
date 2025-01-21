@@ -1,4 +1,4 @@
-import Button from '@shared/ui/Button/Button';
+import Button from '@/shared/ui/Button/Button';
 interface GoogleLoginButtonProps {
   onLogin: () => Promise<void>;
   isLoading: boolean;

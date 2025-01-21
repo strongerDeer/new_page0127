@@ -11,7 +11,7 @@ export default function Input({
 }: InputProps) {
   return (
     <div className={inputWrapper}>
-      {label && <label className={inputLabel()}>{label}</label>}
+      {label && <label className={inputLabel({ state })}>{label}</label>}
       <input
         className={inputField({
           state,

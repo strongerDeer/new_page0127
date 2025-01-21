@@ -1,5 +1,5 @@
-import { cormorant } from '@shared/font';
-import { ROUTES } from '@shared/lib/constants';
+import { cormorant } from '@/shared/font';
+import { ROUTES } from '@/lib/constants';
 import Link from 'next/link';
 import { headerWrap, logoStyle } from './Header.css';
 

@@ -11,24 +11,29 @@ export const inputWrapper = style({
   gap: '0.5rem',
 });
 
+const defaultInputStyle = {
+  height: '4rem',
+  padding: '0 1em',
+  border: '1px solid #ddd',
+  borderRadius: '0.4rem',
+};
+
 export const inputField = recipe({
-  base: {
-    height: '4rem',
-    padding: '0 1em',
-    border: '1px solid #ddd',
-    borderRadius: '0.4rem',
-  },
+  base: defaultInputStyle,
   variants: {
     state: {
       default: {},
-      error: {},
-      success: {},
+      error: { borderColor: 'red' },
+      success: { borderColor: 'green' },
     },
     full: {
       true: {
         width: '100%',
       },
     },
+  },
+  defaultVariants: {
+    state: 'default',
   },
 });
 
@@ -41,12 +46,11 @@ export const inputLabel = recipe({
   variants: {
     state: {
       default: {},
-      error: {},
-      success: {},
+      error: { color: 'red' },
+      success: { color: 'green' },
     },
-    variant: {
-      underline: {},
-      outline: {},
-    },
+  },
+  defaultVariants: {
+    state: 'default',
   },
 });

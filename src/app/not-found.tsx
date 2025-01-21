@@ -1,8 +1,8 @@
 'use client';
-import { cormorant } from '@shared/font';
-import { ROUTES } from '@shared/lib/constants';
-import Button from '@shared/ui/Button/Button';
-import Container from '@shared/ui/Container/Container';
+import { cormorant } from '@/shared/font';
+import { ROUTES } from '@/lib/constants';
+import Button from '@/shared/ui/Button/Button';
+import Container from '@/shared/ui/Container/Container';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 

@@ -1,5 +1,5 @@
 'use client';
-import Search from '@shared/ui/Search/Search';
+import Search from '@/shared/ui/Search/Search';
 import { useSearchParams } from 'next/navigation';
 
 export default function Page() {

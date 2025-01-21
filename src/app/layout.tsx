@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import '@styles/globals.scss';
+import '@/styles/globals.scss';
 
-import { pretendard } from '@shared/font';
-import { SITE } from '@shared/lib/constants';
-import GlobalLayout from '@shared/ui/Layout/GlobalLayout';
+import { pretendard } from '@/shared/font';
+import { SITE } from '@/lib/constants';
+import GlobalLayout from '@/shared/ui/Layout/GlobalLayout';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.baseUrl),

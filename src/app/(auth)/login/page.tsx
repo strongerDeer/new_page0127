@@ -1,5 +1,5 @@
-import { GoogleLoginButton } from '@features/auth/GoogleLoginButton';
-import Container from '@shared/ui/Container/Container';
+import { GoogleLoginButton } from '@/features/auth/GoogleLoginButton';
+import Container from '@/shared/ui/Container/Container';
 
 export default function page() {
   return (

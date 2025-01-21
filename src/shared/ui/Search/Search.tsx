@@ -1,5 +1,5 @@
 'use client';
-import { ROUTES } from '@shared/lib/constants';
+import { ROUTES } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 

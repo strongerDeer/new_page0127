@@ -1,5 +1,5 @@
-import { auth, db } from '@shared/api/firebase';
-import { COLLECTIONS, NO_PROFILE } from '@shared/lib/constants';
+import { auth, db } from '@/shared/api/firebase';
+import { COLLECTIONS, NO_PROFILE } from '@/lib/constants';
 import { FirebaseError } from 'firebase/app';
 
 import { doc, setDoc } from 'firebase/firestore';

@@ -1,5 +1,5 @@
-import JoinForm from '@features/auth/JoinForm';
-import Container from '@shared/ui/Container/Container';
+import JoinForm from '@/features/auth/JoinForm';
+import Container from '@/shared/ui/Container/Container';
 
 export default function Page() {
   return (

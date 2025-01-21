@@ -11,12 +11,12 @@ const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  moduleDirectories: ['node_modules', '<rootDir>/src'],
+  moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>'],
   moduleNameMapper: {
-    '\\.css\\.ts$': '<rootDir>/test/styleMock.js',
-    '.*testing-library/(.*)$': '<rootDir>/node_modules/@testing-library/$1',
-    '.*vanilla-extract/(.*)$': '<rootDir>/node_modules/@vanilla-extract/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/shared/lib/$1',
+    '^@/styles/(.*)$': '<rootDir>/src/shared/styles/$1',
   },
 };
 

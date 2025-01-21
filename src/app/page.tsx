@@ -1,4 +1,4 @@
-import Search from '@shared/ui/Search/Search';
+import Search from '@/shared/ui/Search/Search';
 
 export default function Home() {
   return (
