@@ -19,11 +19,12 @@ export default function BookItem({
   price,
 }: BookData) {
   return (
-    <Link href={`${ROUTES.BOOK}/${id}`}>
-      <Image src={frontCover} alt="" width={100} height={100} />
+    <div>
+      {/* <Image src={frontCover} alt="" width={100} height={100} /> */}
       <h3>{title}</h3>
       <p>{subTitle}</p>
       <p>{description}</p>
-    </Link>
+      <Link href={`${ROUTES.BOOK}/${id}`}>더 알아보기</Link>
+    </div>
   );
 }
