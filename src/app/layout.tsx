@@ -4,7 +4,7 @@ import '@styles/globals.scss';
 
 import { pretendard } from '@shared/font';
 import { SITE } from '@shared/lib/constants';
-import Header from '@shared/ui/Header/Header';
+import GlobalLayout from '@shared/ui/Layout/GlobalLayout';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.baseUrl),
@@ -35,8 +35,7 @@ export default function RootLayout({
   return (
     <html lang="ko-KR">
       <body className={pretendard.className}>
-        <Header />
-        {children}
+        <GlobalLayout>{children}</GlobalLayout>
       </body>
     </html>
   );

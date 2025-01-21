@@ -18,7 +18,7 @@ export const ROUTES = {
 
   //book
   BOOK: '/book',
-  BOOK_SEARCH: '/book/search',
+  BOOK_SEARCH: '/search',
   MY_BOOK: '/my-books',
   FOLLOW: '/follow',
 
