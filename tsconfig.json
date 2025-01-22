@@ -20,7 +20,7 @@
         "name": "next"
       }
     ],
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom", "jest-extended"]
   },
   "include": [
     "next-env.d.ts",
