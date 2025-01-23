@@ -1,14 +1,19 @@
 export interface User {
-  id: string;
+  userId: string;
   uid: string;
+  photoURL?: string;
+
   email: string;
+  provider: 'google';
   displayName: string;
 
+  sex: 'male' | 'female' | null;
+  birth: string;
+  bio: string;
+
+  goal: number;
   background?: string;
-  photoURL?: string;
-  intro?: string;
+
   createdAt: Date;
   updatedAt: Date;
-  provider: 'google';
-  goal: number;
 }

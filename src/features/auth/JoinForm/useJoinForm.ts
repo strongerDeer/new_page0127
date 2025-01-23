@@ -5,45 +5,48 @@ import { FirebaseError } from 'firebase/app';
 import { doc, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { User } from './types';
 
-export type JoinFormData = Omit<User, 'createdAt' | 'updatedAt'>;
+import { JoinFormData } from './types';
+import { User } from '../model/types';
 
-export default function useJoin() {
+export default function useJoinForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState<JoinFormData>({
-    id: '',
+    userId: '',
     uid: '',
+    photoURL: '',
     email: '',
-    displayName: '',
-    photoURL: NO_PROFILE,
-    background: NO_PROFILE,
-    intro: '',
     provider: 'google',
+    displayName: '',
+    sex: null,
+    birth: '',
+    bio: '',
     goal: 0,
   });
 
   useEffect(() => {
     const currentUser = auth.currentUser;
     if (!currentUser) {
-      // router.push('/login');
+      router.push('/login');
       return;
     }
 
     setFormData({
-      id: currentUser.email?.split('@')[0] || '', // 사용자가 직접 입력
       uid: currentUser.uid,
       email: currentUser.email || '',
-      displayName: currentUser.displayName || '',
-      photoURL: currentUser.photoURL || NO_PROFILE,
-      intro: '',
       provider: 'google',
+      photoURL: currentUser.photoURL || NO_PROFILE,
+      userId: currentUser.email?.split('@')[0] || '', // 사용자가 직접 입력
+      sex: null,
+      birth: '',
+      displayName:
+        currentUser.displayName || currentUser.email?.split('@')[0] || '',
+      bio: '',
       goal: 0,
     });
   }, [router]);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -52,10 +55,23 @@ export default function useJoin() {
     }));
   };
 
+  const handleProfileImgChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      photoURL: value,
+    }));
+  };
+
+  const handleRadioChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      sex: value as 'male' | 'female',
+    }));
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // 유효성 검사
-    if (!formData.id.trim()) {
+    if (!formData.userId.trim()) {
       setError('아이디를 입력해주세요.');
       return;
     }
@@ -65,11 +81,12 @@ export default function useJoin() {
     try {
       const userDoc: User = {
         ...formData,
+        background: '',
         createdAt: new Date(),
         updatedAt: new Date(),
       };
 
-      await setDoc(doc(db, COLLECTIONS.USERS, formData.id), userDoc);
+      await setDoc(doc(db, COLLECTIONS.USERS, formData.userId), userDoc);
       // TODO: 개인페이지로 이동
       console.log('회원가입 되었습니다.');
     } catch (error: unknown) {
@@ -88,6 +105,9 @@ export default function useJoin() {
     formData,
     handleChange,
     handleSubmit,
+    handleRadioChange,
+    handleProfileImgChange,
+
     isLoading,
     error,
   };

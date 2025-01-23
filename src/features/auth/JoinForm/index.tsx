@@ -1,18 +1,27 @@
 'use client';
 
-import useJoin from '../model/useJoin';
 import { JoinForm as UIForm } from './ui';
+import useJoinForm from './useJoinForm';
 
 export default function JoinForm() {
-  const { formData, isLoading, error, handleSubmit, handleChange } = useJoin();
+  const {
+    formData,
+    handleChange,
+    handleSubmit,
+    isLoading,
+    error,
+    handleProfileImgChange,
+    handleRadioChange,
+  } = useJoinForm();
 
   return (
     <UIForm
       formData={formData}
+      onSubmit={handleSubmit}
+      onChange={handleChange}
       isLoading={isLoading}
       error={error}
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
+      handleProfileImgChange={handleProfileImgChange}
     />
   );
 }
