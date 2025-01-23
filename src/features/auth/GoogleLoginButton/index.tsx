@@ -1,6 +1,6 @@
 'use client';
-import { useGoogleAuth } from '../model/useGoogleAuth';
 import { GoogleLoginButton as UIButton } from './ui';
+import { useGoogleAuth } from './useGoogleAuth';
 
 export function GoogleLoginButton() {
   const { handleLogin, isLoading, error } = useGoogleAuth();

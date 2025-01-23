@@ -4,8 +4,9 @@ import { useRouter } from 'next/navigation';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '@/shared/api/firebase';
 import { checkUserExistsByUid } from '../api/auth';
-import { useAuthStore } from './store';
+
 import { FirebaseError } from 'firebase/app';
+import { useAuthStore } from '../model/store';
 
 export function useGoogleAuth() {
   const router = useRouter();
