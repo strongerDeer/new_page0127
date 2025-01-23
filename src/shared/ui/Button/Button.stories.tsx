@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import { getIconOptions } from '../Icon/Icon';
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   parameters: {
@@ -44,11 +44,17 @@ const meta = {
       defaultValue: { summary: 'false' },
     },
   },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    label: 'Button',
+    color: 'primary',
+  },
+};
 
 export const Variants: Story = {
   args: {

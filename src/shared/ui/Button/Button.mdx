@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
@@ -8,12 +8,11 @@ import * as ButtonStories from './Button.stories';
 버튼 컴포넌트입니다.
 
 <Canvas>
-  <Story of={ButtonStories.Variants} />
+  <Story of={ButtonStories.Default} />
 </Canvas>
+<Controls />
 
-## Usage
-
-기본적인 사용 방법:
+## 사용법
 
 ```tsx
 import { Button } from '@/shared/ui';
