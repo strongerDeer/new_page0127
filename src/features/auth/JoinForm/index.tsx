@@ -9,7 +9,7 @@ export default function JoinForm() {
     handleChange,
     handleSubmit,
     isLoading,
-    error,
+    errors,
     handleProfileImgChange,
     handleRadioChange,
   } = useJoinForm();
@@ -20,8 +20,9 @@ export default function JoinForm() {
       onSubmit={handleSubmit}
       onChange={handleChange}
       isLoading={isLoading}
-      error={error}
+      errors={errors}
       handleProfileImgChange={handleProfileImgChange}
+      handleRadioChange={handleRadioChange}
     />
   );
 }

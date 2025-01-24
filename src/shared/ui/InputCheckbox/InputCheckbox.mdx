@@ -1,0 +1,27 @@
+import { Meta, Story, Controls, Canvas, Description } from '@storybook/blocks';
+import * as InputCheckboxStories from './InputCheckbox.stories';
+import InputCheckbox from '.';
+
+<Meta title="Components/InputCheckbox" of={InputCheckboxStories} />
+
+# Input
+
+텍스트 입력을 위한 기본 컴포넌트입니다.
+
+## Examples
+
+<Canvas>
+  <Story of={InputCheckboxStories.Default} />
+</Canvas>
+<Controls />
+
+## 사용
+
+<InputCheckbox
+  name="01"
+  id="01"
+  label="이용약관 동의"
+  required
+  checked
+  link="#"
+/>

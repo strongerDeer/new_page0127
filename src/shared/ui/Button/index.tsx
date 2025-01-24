@@ -2,7 +2,7 @@
 import React from 'react';
 import { buttonStyle, buttonVars } from './Button.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import Icon, { IconType } from '../Icon/Icon';
+import Icon, { IconType } from '../Icon';
 
 export interface ButtonProps {
   leftIcon?: IconType;

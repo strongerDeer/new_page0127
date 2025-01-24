@@ -8,11 +8,13 @@ import { useEffect, useState } from 'react';
 
 import { JoinFormData } from './types';
 import { User } from '../model/types';
+import { joinFormSchema } from './joinFormSchema';
+import { ZodError } from 'zod';
 
 export default function useJoinForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState<JoinFormData>({
     userId: '',
     uid: '',
@@ -47,11 +49,30 @@ export default function useJoinForm() {
       goal: 0,
     });
   }, [router]);
+
+  const validateForm = () => {
+    try {
+      joinFormSchema.parse(formData);
+      return true;
+    } catch (error) {
+      if (error instanceof ZodError) {
+        const formError: Record<string, string> = {};
+
+        error.errors.forEach((err) => {
+          const field = err.path[0];
+          formError[field] = error.message;
+        });
+        setErrors(formError);
+      }
+      return false;
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === 'goal' ? Number(value) : value,
+      [name]: value,
     }));
   };
 
@@ -68,16 +89,16 @@ export default function useJoinForm() {
       sex: value as 'male' | 'female',
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 유효성 검사
-    if (!formData.userId.trim()) {
-      setError('아이디를 입력해주세요.');
+
+    if (!validateForm()) {
       return;
     }
 
     setIsLoading(true);
-    setError('');
+
     try {
       const userDoc: User = {
         ...formData,
@@ -92,9 +113,12 @@ export default function useJoinForm() {
     } catch (error: unknown) {
       console.error('Login error:', error);
       if (error instanceof FirebaseError) {
-        setError(error.message);
+        setErrors((prev) => ({ ...prev, submit: error.message }));
       } else {
-        setError('회원가입 중 오류가 발생했습니다.');
+        setErrors((prev) => ({
+          ...prev,
+          submit: '회원가입 중 오류가 발생했습니다.',
+        }));
       }
     } finally {
       setIsLoading(false);
@@ -107,8 +131,7 @@ export default function useJoinForm() {
     handleSubmit,
     handleRadioChange,
     handleProfileImgChange,
-
     isLoading,
-    error,
+    errors,
   };
 }

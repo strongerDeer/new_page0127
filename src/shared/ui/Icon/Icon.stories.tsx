@@ -1,6 +1,5 @@
-// src/shared/ui/Icon/Icon.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
-import Icon from './Icon';
+import Icon, { ICONS } from '.';
 
 const meta = {
   title: 'Components/Icon',
@@ -10,7 +9,7 @@ const meta = {
   },
   argTypes: {
     name: {
-      options: ['google', 'like'],
+      options: Object.keys(ICONS),
       control: 'select',
       description: '아이콘 이름',
     },
@@ -19,6 +18,14 @@ const meta = {
       description: '아이콘 크기',
       defaultValue: 16,
     },
+    color: {
+      control: {
+        type: 'color',
+        presetColors: ['red', 'royalblue'],
+      },
+      description: '아이콘 색상',
+      defaultValue: 'royalblue',
+    },
   },
 } satisfies Meta<typeof Icon>;
 
@@ -26,16 +33,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const GoogleIcon: Story = {
+export const Default: Story = {
   args: {
-    name: 'google',
-    size: 24,
-  },
-};
-
-export const LikeIcon: Story = {
-  args: {
-    name: 'like',
-    size: 24,
+    name: 'happy',
+    size: 100,
+    color: 'royalblue',
   },
 };

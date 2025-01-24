@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
-import { getIconOptions } from '../Icon/Icon';
+import { ICONS } from '@/shared/ui/Icon';
+import Button from '.';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -28,7 +28,7 @@ const meta: Meta<typeof Button> = {
       defaultValue: { summary: 'md' },
     },
     leftIcon: {
-      options: getIconOptions(),
+      options: Object.keys(ICONS),
       control: 'select',
       description: '왼쪽 아이콘',
       defaultValue: { summary: 'null' },
@@ -54,74 +54,4 @@ export const Default: Story = {
     label: 'Button',
     color: 'primary',
   },
-};
-
-export const Variants: Story = {
-  args: {
-    label: 'Button',
-  },
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button label="solid" />
-      <Button label="outline" variant="outline" />
-    </div>
-  ),
-};
-
-export const Colors: Story = {
-  args: {
-    label: 'Button',
-  },
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button label="primary" color="primary" />
-      <Button label="secondary" color="secondary" />
-    </div>
-  ),
-};
-
-export const Sizes: Story = {
-  args: {
-    label: 'Button',
-  },
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button label="xs: Button" size="xs" color="primary" />
-      <Button label="sm: Button" size="sm" color="primary" />
-      <Button label="md: Button" size="md" color="primary" />
-      <Button label="lg: Button" size="lg" color="primary" />
-    </div>
-  ),
-};
-
-// 비활성화 상태 예시
-export const Disabled: Story = {
-  args: {
-    color: 'primary',
-    variant: 'solid',
-    label: 'Disabled Button',
-    disabled: true,
-  },
-};
-
-// 전체 너비 예시
-export const FullWidth: Story = {
-  args: {
-    color: 'primary',
-    variant: 'solid',
-    label: 'Full Width Button',
-    full: true,
-  },
-};
-
-export const IconButtons: Story = {
-  args: {
-    label: 'Button',
-  },
-  render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <Button label="구글계정으로 시작하기" leftIcon="google" />
-      <Button label="좋아요" leftIcon="like" variant="outline" />
-    </div>
-  ),
 };

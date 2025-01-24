@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as IconStories from './Icon.stories';
+import Icon from '@/shared/ui/Icon';
+import { ICONS } from '@/shared/ui/Icon';
+
+<Meta title="Components/Icon" of={IconStories} />
+
+# Icon
+
+아이콘 컴포넌트입니다.
+
+<Canvas>
+  <Story of={IconStories.Default} />
+</Canvas>
+<Controls />
+
+## 사용법
+
+```tsx
+import Icon from '@/shared/ui/Icon';
+
+function MyComponent() {
+  return <Icon name="heart" />;
+}
+```
+
+## 아이콘 종류
+
+- 클릭시 코드가 복사됩니다.
+
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(6rem, auto))',
+    gap: '1em',
+  }}
+>
+  {Object.keys(ICONS).map((icon, index) => (
+    <button
+      style={{ background: 'none', border: 0, cursor: 'pointer' }}
+      onClick={() => {
+        window.navigator.clipboard.writeText(`<Icon name=${icon} />`);
+      }}
+    >
+      <p style={{ fontSize: '1.2rem', margin: '0 0 0.5em' }}>{icon}</p>
+      <Icon name={icon} key={index} size={32} />
+    </button>
+
+))}
+
+</div>

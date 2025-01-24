@@ -14,6 +14,7 @@ const baseButton = style({
     [basePaddingVar]: '1.2em',
   },
 
+  flexShrink: 0,
   display: 'inline-flex',
   alignItems: 'center',
   gap: '8px',

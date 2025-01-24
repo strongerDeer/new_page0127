@@ -1,7 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
+import Button from '.';
 
-<Meta of={ButtonStories} />
+<Meta title="Components/Button" of={ButtonStories} />
 
 # Button
 
@@ -15,9 +16,41 @@ import * as ButtonStories from './Button.stories';
 ## 사용법
 
 ```tsx
-import { Button } from '@/shared/ui';
+import Button from '@/shared/ui/Button';
 
 function MyComponent() {
   return <Button label="Click me" color="primary" />;
 }
 ```
+
+## 버튼
+
+- color
+
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button label="primary" color="primary" />
+    <Button label="secondary" color="secondary" />
+  </div>
+
+- variant: solid/outline
+
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button label="solid" color="primary" />
+    <Button label="outline" color="primary" variant="outline" />
+  </div>
+
+- leftIcon
+
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button label="구글계정으로 시작하기" leftIcon="google" />
+    <Button label="좋아요" leftIcon="heart" variant="outline" />
+  </div>
+
+- size
+
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button label="xs: Button" size="xs" color="primary" />
+    <Button label="sm: Button" size="sm" color="primary" />
+    <Button label="md: Button" size="md" color="primary" />
+    <Button label="lg: Button" size="lg" color="primary" />
+  </div>

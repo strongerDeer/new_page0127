@@ -7,7 +7,7 @@ import {
   errorStyle,
   helperStyle,
 } from './Input.css';
-import Icon from '../Icon/Icon';
+import Icon from '../Icon';
 
 export default function Input({
   id,
@@ -17,6 +17,7 @@ export default function Input({
   value,
   state = 'default',
   full = false,
+  required,
   onChange,
   ...rest
 }: InputProps) {
@@ -24,7 +25,7 @@ export default function Input({
     <div className={inputWrapper}>
       {label && (
         <label htmlFor={id} className={inputLabel({ state })}>
-          {label}
+          {label} {required && <span>필수</span>}
         </label>
       )}
       <input
@@ -35,11 +36,12 @@ export default function Input({
         })}
         value={value}
         onChange={onChange}
+        required={required}
         {...rest}
       />
       {errorMsg && (
         <p className={errorStyle}>
-          <Icon name="error" />
+          <Icon name="alert" />
           {errorMsg}
         </p>
       )}

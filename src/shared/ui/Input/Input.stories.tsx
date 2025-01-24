@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input from './Input';
+import Input from '.';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -80,63 +80,4 @@ export const Default: Story = {
     placeholder: 'Enter your email',
     name: 'email',
   },
-};
-
-export const Stats: Story = {
-  args: {
-    label: 'Input',
-  },
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '1rem',
-        alignItems: 'flex-start',
-      }}
-    >
-      <Input
-        label="default"
-        placeholder="아이디를 입력해주세요"
-        value=""
-        onChange={() => {}}
-      />
-      <Input
-        label="filled"
-        value="test123"
-        placeholder="아이디를 입력해주세요"
-        onChange={() => {}}
-      />
-      <Input
-        label="error"
-        value="test123"
-        placeholder="아이디를 입력해주세요"
-        state="error"
-        errorMsg="이미 사용하고 있는 아이디에요!"
-        onChange={() => {}}
-      />
-      <Input
-        label="success"
-        value="test123"
-        placeholder="아이디를 입력해주세요"
-        state="success"
-        helperMsg="너무 멋진 아이디네요!"
-        onChange={() => {}}
-      />
-      <Input
-        label="disabled"
-        value="test123"
-        placeholder="아이디를 입력해주세요"
-        onChange={() => {}}
-        disabled
-      />
-      <Input
-        label="readOnly"
-        value="test123"
-        placeholder="아이디를 입력해주세요"
-        onChange={() => {}}
-        readOnly
-      />
-    </div>
-  ),
 };

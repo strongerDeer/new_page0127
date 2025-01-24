@@ -1,4 +1,4 @@
-import { inputStyle, LabelStyle, RadioWrap } from './RadioList.css';
+import { inputStyle, LabelStyle, RadioWrap } from './InputRadioList.css';
 
 interface Radio {
   id: string;
@@ -7,17 +7,22 @@ interface Radio {
 }
 
 interface RadioListProps {
+  required: boolean;
   title: string;
   name: string;
   radios: Radio[];
   value?: string;
+  errorMsg?: string;
   onChange?: (value: string) => void;
 }
 
 export default function RadioList({
+  required,
   name,
   radios,
   value,
+  errorMsg,
+
   onChange,
   title,
 }: RadioListProps) {
@@ -27,7 +32,10 @@ export default function RadioList({
 
   return (
     <div>
-      <p>{title}</p>
+      <p>
+        {title}
+        {required && <span>필수</span>}
+      </p>
       <div className={RadioWrap}>
         {radios.map(({ id, label, value: optionValue }: Radio) => (
           <div key={id}>
@@ -39,6 +47,7 @@ export default function RadioList({
               value={optionValue}
               checked={value === optionValue}
               onChange={handleChange}
+              required={required}
             />
             <label htmlFor={id} className={LabelStyle}>
               {label}
@@ -46,6 +55,7 @@ export default function RadioList({
           </div>
         ))}
       </div>
+      {errorMsg && <p>{errorMsg}</p>}
     </div>
   );
 }

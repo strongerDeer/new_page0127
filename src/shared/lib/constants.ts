@@ -35,4 +35,5 @@ export const ROUTES = {
 
 export const COLLECTIONS = {
   USERS: 'users',
+  TERMS: 'terms',
 };

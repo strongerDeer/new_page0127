@@ -1,0 +1,28 @@
+import { Meta, Story, Controls, Canvas, Description } from '@storybook/blocks';
+import * as InputRadioListStories from './InputRadioList.stories';
+import InputRadioList from '.';
+
+<Meta title="Components/InputRadioList" of={InputRadioListStories} />
+
+# Input
+
+텍스트 입력을 위한 기본 컴포넌트입니다.
+
+## Examples
+
+<Canvas>
+  <Story of={InputRadioListStories.Default} />
+</Canvas>
+<Controls />
+
+## 사용
+
+<InputRadioList
+  title="성별"
+  name="sex"
+  radios={[
+    { id: 'male', value: 'male', label: '남성' },
+    { id: 'female', value: 'female', label: '여성' },
+  ]}
+  required
+/>
