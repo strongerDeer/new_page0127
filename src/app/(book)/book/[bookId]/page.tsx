@@ -16,6 +16,6 @@ export default async function Page({
 }: {
   params: Promise<{ bookId: string }>;
 }) {
-  const bookId = (await params).bookId;
+  const { bookId } = await params;
   return <div>Book 상세 {bookId}</div>;
 }
