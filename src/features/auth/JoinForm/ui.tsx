@@ -6,7 +6,7 @@ import Terms from '@/features/terms/ui';
 
 import Button from '@/shared/ui/Button';
 import Flex from '@/shared/ui/Flex/Flex';
-import Input from '@/shared/ui/Input/Input';
+import Input from '@/shared/ui/Input';
 import InputRadioList from '@/shared/ui/InputRadioList';
 
 export function JoinForm({

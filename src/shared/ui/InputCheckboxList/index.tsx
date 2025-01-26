@@ -1,6 +1,5 @@
-import InputCheckbox from './InputCheckbox';
-import { Fragment } from 'react';
 import { WrapStyle } from './InputCheckboxList.css';
+import InputCheckbox from '../InputCheckbox';
 
 interface Checks {
   id: string;
@@ -37,20 +36,18 @@ export default function InputCheckboxList({
         onlyLabel
       />
       {checks.map(({ id, title, mandatory, link, checked }: Checks, index) => (
-        <Fragment key={id}>
-          <InputCheckbox
-            key={id + index}
-            name={id + index}
-            id={id}
-            label={title}
-            required={mandatory}
-            checked={checked}
-            link={link}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              handleAgreement(id, e.target.checked);
-            }}
-          />
-        </Fragment>
+        <InputCheckbox
+          key={id + index}
+          name={id + index}
+          id={id}
+          label={title}
+          required={mandatory}
+          checked={checked}
+          link={link}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            handleAgreement(id, e.target.checked);
+          }}
+        />
       ))}
     </div>
   );
