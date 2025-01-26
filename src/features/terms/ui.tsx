@@ -19,9 +19,9 @@ export default function Terms() {
     });
   };
   const isAllChecked = termsAgreements.every((term) => term.checked);
-  const isMandatoryChecked = termsAgreements
-    .filter((term) => term.mandatory)
-    .every((term) => term.checked);
+  // const isMandatoryChecked = termsAgreements
+  //   .filter((term) => term.mandatory)
+  //   .every((term) => term.checked);
   return (
     <InputCheckboxList
       id="agree"

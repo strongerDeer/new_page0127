@@ -1,22 +1,21 @@
 import Link from 'next/link';
 import { BookData } from './types';
 import { ROUTES } from '@/lib/constants';
-import Image from 'next/image';
 
 export default function BookItem({
   id,
   title,
   subTitle,
   description,
-  frontCover,
-  flipCover,
-  author,
-  publisher,
-  pubDate,
-  categoryName,
-  category,
-  page,
-  price,
+  // frontCover,
+  // flipCover,
+  // author,
+  // publisher,
+  // pubDate,
+  // categoryName,
+  // category,
+  // page,
+  // price,
 }: BookData) {
   return (
     <div>

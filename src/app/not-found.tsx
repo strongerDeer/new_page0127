@@ -16,7 +16,7 @@ export default function NotFound() {
   useEffect(() => {
     // 프리패칭
     router.prefetch('/home');
-  }, []);
+  }, [router]);
 
   return (
     <Container tag="main">
