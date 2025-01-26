@@ -36,7 +36,7 @@ export default function InputCheckbox({
       <label htmlFor={id} className={LabelStyle}>
         <Icon
           name={checked ? 'checkFill' : 'check'}
-          color={checked ? 'royalblue' : 'gray'}
+          color={checked ? 'var(--primary)' : 'gray'}
           size={20}
         />
         {required ? <span>필수</span> : !onlyLabel && <span>선택</span>}
