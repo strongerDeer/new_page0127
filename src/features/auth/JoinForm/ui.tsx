@@ -3,11 +3,15 @@ import { JoinFormProps } from './types';
 
 import ImageUpload from '@/features/ImageUpload';
 import Terms from '@/features/terms/ui';
+import { auth } from '@/shared/api/firebase';
+import { ROUTES } from '@/shared/lib/constants';
 
 import Button from '@/shared/ui/Button';
 import Flex from '@/shared/ui/Flex/Flex';
 import Input from '@/shared/ui/Input';
 import InputRadioList from '@/shared/ui/InputRadioList';
+import { deleteUser } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
 
 export function JoinForm({
   formData,
@@ -18,6 +22,9 @@ export function JoinForm({
   handleProfileImgChange,
   handleRadioChange,
 }: JoinFormProps) {
+  const router = useRouter();
+  const authUser = auth.currentUser;
+
   return (
     <form onSubmit={onSubmit}>
       <ImageUpload
@@ -102,7 +109,22 @@ export function JoinForm({
         <Terms />
         {/* {error && <p className="text-red-500 text-sm">{error}</p>} */}
         <Flex basis="2:8">
-          <Button label="취소" type="button" variant="outline" />
+          {authUser && (
+            <Button
+              label="취소"
+              type="button"
+              variant="outline"
+              onClick={async () => {
+                try {
+                  await deleteUser(authUser);
+                  router.replace(ROUTES.LOGIN);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+            />
+          )}
+
           <Button
             label={isLoading ? '처리중...' : '회원가입'}
             type="submit"
