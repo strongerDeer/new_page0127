@@ -6,21 +6,26 @@ export default function Flex({
   gap,
   children,
   basis,
+  align,
+  margin,
 }: {
   tag?: 'div';
   gap?: string;
   direction?: 'row' | 'column';
   alignItems?: 'center' | 'flex-end';
   children: React.ReactNode;
-  basis?: string;
+  basis?: '2:8';
+  align?: 'center' | 'left';
+  margin?: string;
 }) {
   const TagName = tag;
   return (
     <TagName
-      className={FlexStyle({ basis })}
+      className={FlexStyle({ basis, align })}
       style={{
         flexDirection: direction,
         gap: gap,
+        margin: margin,
       }}
     >
       {children}

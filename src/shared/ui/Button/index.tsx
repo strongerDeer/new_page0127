@@ -51,7 +51,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
     >
-      {leftIcon && <Icon name={leftIcon} />}
+      {leftIcon && <Icon name={leftIcon} size={size !== 'xs' ? 20 : 16} />}
       <span>{label}</span>
     </button>
   );
