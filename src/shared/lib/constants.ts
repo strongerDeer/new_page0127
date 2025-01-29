@@ -35,5 +35,6 @@ export const ROUTES = {
 
 export const COLLECTIONS = {
   USERS: 'users',
+  BOOKS: 'books',
   TERMS: 'terms',
 };
