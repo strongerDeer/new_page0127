@@ -1,3 +1,7 @@
+'use client';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { client } from '@/shared/api/queryClient';
+
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
@@ -7,10 +11,10 @@ export default function GlobalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <QueryClientProvider client={client}>
       <Header />
-      <div>{children}</div>
+      <div className="contents">{children}</div>
       <Footer />
-    </div>
+    </QueryClientProvider>
   );
 }

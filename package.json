@@ -10,7 +10,8 @@
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "chromatic": "npx chromatic --project-token=chpt_3f5cbcbb30f2c34"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.64.0",
@@ -51,6 +52,7 @@
     "@vanilla-extract/jest-transform": "^1.1.12",
     "@vanilla-extract/next-plugin": "^2.4.8",
     "@vanilla-extract/webpack-plugin": "^2.3.16",
+    "chromatic": "^11.25.2",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "eslint-plugin-storybook": "^0.11.2",
