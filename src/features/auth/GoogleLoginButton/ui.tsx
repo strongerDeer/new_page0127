@@ -17,6 +17,7 @@ export function GoogleLoginButton({
         label={isLoading ? '로그인 중...' : 'Google 계정으로 시작하기'}
         onClick={onLogin}
         disabled={isLoading}
+        color="content-primary"
         full
       />
 

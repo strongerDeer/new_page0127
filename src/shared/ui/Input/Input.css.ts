@@ -1,6 +1,15 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+export const requireStyle = style({
+  height: '4rem',
+  padding: '0.1em 0.5em',
+  border: '1px solid #eee',
+  borderRadius: '1rem',
+  background: '#f5f5f5',
+  fontSize: '0.9em',
+  marginRight: '0.2em',
+});
 export const errorStyle = style({
   display: 'flex',
   gap: '0.5em',
@@ -18,7 +27,7 @@ export const helperStyle = style({
 export const inputWrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.5rem',
+  gap: '0.8rem',
 });
 
 const defaultInputStyle = {

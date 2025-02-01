@@ -1,7 +1,7 @@
 import { cormorant } from '@/shared/font';
 import { ROUTES } from '@/lib/constants';
 import Link from 'next/link';
-import { headerWrap, logoStyle } from './Header.css';
+import { headerWrap, logoStyle, right } from './Header.css';
 
 export default function Header() {
   return (
@@ -12,11 +12,11 @@ export default function Header() {
         </h1>
       </Link>
 
-      {/* prefetch 명시적 해제 */}
-      <Link href={ROUTES.BOOK_SEARCH} prefetch={false}>
-        SEARCH
-      </Link>
-      <Link href={'/book/1'}>BOOK 1</Link>
+      <div className={right}>
+        <Link href={ROUTES.BOOK_SEARCH}>SEARCH</Link>
+        <Link href={'/book/a'}>BOOK A</Link>
+        <Link href={ROUTES.LOGIN}>시작하기</Link>
+      </div>
     </header>
   );
 }

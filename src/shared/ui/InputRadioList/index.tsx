@@ -1,3 +1,4 @@
+import { inputLabel, inputWrapper, requireStyle } from '../Input/Input.css';
 import { inputStyle, LabelStyle, RadioWrap } from './InputRadioList.css';
 
 interface Radio {
@@ -31,10 +32,10 @@ export default function RadioList({
   };
 
   return (
-    <div>
-      <p>
+    <div className={inputWrapper}>
+      <p className={inputLabel()}>
         {title}
-        {required && <span>필수</span>}
+        {required && <span className={requireStyle}>필수</span>}
       </p>
       <div className={RadioWrap}>
         {radios.map(({ id, label, value: optionValue }: Radio) => (

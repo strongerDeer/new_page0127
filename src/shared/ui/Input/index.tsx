@@ -6,6 +6,7 @@ import {
   inputWrapper,
   errorStyle,
   helperStyle,
+  requireStyle,
 } from './Input.css';
 import Icon from '../Icon';
 
@@ -25,7 +26,7 @@ export default function Input({
     <div className={inputWrapper}>
       {label && (
         <label htmlFor={id} className={inputLabel({ state })}>
-          {label} {required && <span>필수</span>}
+          {label} {required && <span className={requireStyle}>필수</span>}
         </label>
       )}
       <input

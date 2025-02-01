@@ -63,7 +63,7 @@ export function JoinForm({
           label="생년월일(6자리)"
           value={formData.birth}
           onChange={onChange}
-          placeholder="990101"
+          placeholder="YYMMDD"
           state={errors?.birth ? 'error' : 'default'}
           errorMsg={errors?.birth}
           required
