@@ -21,6 +21,16 @@ const config: Config = {
   transform: {
     '\\.css\\.ts$': '@vanilla-extract/jest-transform',
   },
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: '__reports__',
+        filename: 'jest.html',
+      },
+    ],
+  ],
 };
 
 export default createJestConfig(config);
