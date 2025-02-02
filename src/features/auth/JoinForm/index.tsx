@@ -12,10 +12,12 @@ export default function JoinForm() {
     errors,
     handleProfileImgChange,
     handleRadioChange,
+    cancelJoin,
   } = useJoinForm();
 
   return (
     <UIForm
+      cancelJoin={cancelJoin}
       formData={formData}
       onSubmit={handleSubmit}
       onChange={handleChange}

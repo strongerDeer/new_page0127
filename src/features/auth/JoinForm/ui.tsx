@@ -3,15 +3,11 @@ import { JoinFormProps } from './types';
 
 import ImageUpload from '@/features/ImageUpload';
 import Terms from '@/features/terms/ui';
-import { auth } from '@/shared/api/firebase';
-import { ROUTES } from '@/shared/lib/constants';
 
 import Button from '@/shared/ui/Button';
 import Flex from '@/shared/ui/Flex/Flex';
 import Input from '@/shared/ui/Input';
 import InputRadioList from '@/shared/ui/InputRadioList';
-import { deleteUser } from 'firebase/auth';
-import { useRouter } from 'next/navigation';
 
 export function JoinForm({
   formData,
@@ -21,10 +17,8 @@ export function JoinForm({
   onChange,
   handleProfileImgChange,
   handleRadioChange,
+  cancelJoin,
 }: JoinFormProps) {
-  const router = useRouter();
-  const authUser = auth.currentUser;
-
   return (
     <form onSubmit={onSubmit}>
       <ImageUpload
@@ -82,7 +76,7 @@ export function JoinForm({
         />
 
         {/* 소개 */}
-        <Input
+        {/* <Input
           name="bio"
           label="소개"
           value={formData.bio || ''}
@@ -91,10 +85,10 @@ export function JoinForm({
           maxLength={10}
           state={errors?.bio ? 'error' : 'default'}
           errorMsg={errors?.bio}
-        />
+        /> */}
 
         {/* 올해의 목표 권수 */}
-        <Input
+        {/* <Input
           type="number"
           name="goal"
           label="올해의 목표 권수"
@@ -105,25 +99,16 @@ export function JoinForm({
           errorMsg={errors?.goal}
           min={1}
           max={1000}
-        />
+        /> */}
         <Terms />
         {/* {error && <p className="text-red-500 text-sm">{error}</p>} */}
         <Flex basis="2:8">
-          {authUser && (
-            <Button
-              label="취소"
-              type="button"
-              variant="outline"
-              onClick={async () => {
-                try {
-                  await deleteUser(authUser);
-                  router.replace(ROUTES.LOGIN);
-                } catch (error) {
-                  console.log(error);
-                }
-              }}
-            />
-          )}
+          <Button
+            label="취소"
+            type="button"
+            variant="outline"
+            onClick={cancelJoin}
+          />
 
           <Button
             label={isLoading ? '처리중...' : '회원가입'}

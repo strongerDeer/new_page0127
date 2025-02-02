@@ -1,6 +1,9 @@
 import { User } from '../model/types';
 
-export type JoinFormData = Omit<User, 'createdAt' | 'updatedAt'>;
+export type JoinFormData = Omit<
+  User,
+  'createdAt' | 'updatedAt' | 'goal' | 'bio'
+>;
 
 export interface JoinFormProps {
   formData: JoinFormData;
@@ -10,4 +13,5 @@ export interface JoinFormProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleProfileImgChange: (value: string) => void;
   handleRadioChange: (value: string) => void;
+  cancelJoin: () => void;
 }
