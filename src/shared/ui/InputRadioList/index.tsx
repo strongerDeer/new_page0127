@@ -34,8 +34,7 @@ export default function RadioList({
   return (
     <div className={inputWrapper}>
       <p className={inputLabel()}>
-        {title}
-        {required && <span className={requireStyle}>필수</span>}
+        {title} {required && <span className={requireStyle}>필수</span>}
       </p>
       <div className={RadioWrap}>
         {radios.map(({ id, label, value: optionValue }: Radio) => (
