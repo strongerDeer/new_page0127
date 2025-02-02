@@ -31,6 +31,10 @@ export const ROUTES = {
   // admin
   ADMIN: '/admin',
   ADMIN_BANNER: '/admin/banner',
+
+  // term
+  PRIVACY: '/privacy',
+  TERM: '/term',
 } as const;
 
 export const COLLECTIONS = {
