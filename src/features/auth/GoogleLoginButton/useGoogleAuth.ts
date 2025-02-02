@@ -7,6 +7,7 @@ import { checkUserExistsByUid } from '../api/auth';
 
 import { FirebaseError } from 'firebase/app';
 import { useAuthStore } from '../model/store';
+import { ROUTES } from '@/shared/lib/constants';
 
 export function useGoogleAuth() {
   const router = useRouter();
@@ -27,9 +28,9 @@ export function useGoogleAuth() {
       const userExists = await checkUserExistsByUid(uid);
 
       if (userExists) {
-        console.log('로그인되었습니다.');
+        router.push(ROUTES.HOME);
       } else {
-        router.push('/join');
+        router.push(ROUTES.JOIN);
       }
     } catch (error: unknown) {
       console.error('Login error:', error);
