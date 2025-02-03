@@ -112,8 +112,8 @@ describe('Button 컴포넌트', () => {
     expect(smallIcon).toBeInTheDocument();
 
     // 다른 사이즈 (20px)
-    render(<Button label="큰 아이콘" size="md" leftIcon="google" />);
-    const largeIcon = screen.getByTestId('icon-google');
+    render(<Button label="큰 아이콘" size="md" leftIcon="happy" />);
+    const largeIcon = screen.getByTestId('icon-happy');
     expect(largeIcon).toBeInTheDocument();
   });
 
