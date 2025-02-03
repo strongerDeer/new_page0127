@@ -19,11 +19,7 @@ export function useGoogleAuth() {
       setError('');
 
       const { user } = await signInWithPopup(auth, googleProvider);
-      const { uid, email } = user;
-
-      if (!email) {
-        throw new Error('이메일 정보를 가져올 수 없습니다.');
-      }
+      const { uid } = user;
 
       const userExists = await checkUserExistsByUid(uid);
 

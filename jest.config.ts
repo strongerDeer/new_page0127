@@ -19,8 +19,19 @@ const config: Config = {
     '^@/styles/(.*)$': '<rootDir>/src/shared/styles/$1',
   },
   transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.jest.json',
+      },
+    ],
     '\\.css\\.ts$': '@vanilla-extract/jest-transform',
   },
+  transformIgnorePatterns: [
+    '/node_modules/',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   reporters: [
     'default',
     [
