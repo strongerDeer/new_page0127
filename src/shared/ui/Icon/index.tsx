@@ -13,6 +13,7 @@ import {
   TbHome,
   TbChevronLeft,
   TbBook2,
+  TbRefresh,
 } from 'react-icons/tb';
 import React from 'react';
 
@@ -25,7 +26,7 @@ export const ICONS = {
   heartFill: <TbHeartFilled />,
 
   alert: <TbAlertSquareRounded />,
-  err: <TbMoodWrrr />,
+  error: <TbMoodWrrr />,
   happy: <TbMoodHappy />,
   bookmark: <TbBookmark />,
 
@@ -34,6 +35,7 @@ export const ICONS = {
   home: <TbHome />,
   left: <TbChevronLeft />,
   book: <TbBook2 />,
+  reset: <TbRefresh />,
 } as const;
 
 export type IconType = keyof typeof ICONS;
