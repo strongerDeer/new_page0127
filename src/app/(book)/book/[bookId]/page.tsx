@@ -1,3 +1,6 @@
+import ReviewEditor from '@/features/reviewEditor';
+import Container from '@/shared/ui/Container/Container';
+
 // SSR 렌더링
 export const dynamicParams = false;
 // true(기본값): 포함되지 않은 동적 세그먼트는 generateStaticParams요구에 따라 생성
@@ -17,5 +20,10 @@ export default async function Page({
   params: Promise<{ bookId: string }>;
 }) {
   const { bookId } = await params;
-  return <div>Book 상세 {bookId}</div>;
+  return (
+    <Container>
+      <div>Book 상세 {bookId}</div>
+      <ReviewEditor bookId={bookId} />
+    </Container>
+  );
 }
