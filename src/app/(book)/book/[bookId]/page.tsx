@@ -1,4 +1,5 @@
-import ReviewEditor from '@/features/reviewEditor';
+import ReviewEditor from '@/features/review/ReviewEditor';
+import ReviewList from '@/features/review/ReviewList';
 import Container from '@/shared/ui/Container/Container';
 
 // SSR 렌더링
@@ -24,6 +25,7 @@ export default async function Page({
     <Container>
       <div>Book 상세 {bookId}</div>
       <ReviewEditor bookId={bookId} />
+      <ReviewList bookId={bookId} />
     </Container>
   );
 }
